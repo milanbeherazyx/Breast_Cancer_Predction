@@ -56,34 +56,34 @@ class ModelTrainer:
                     'solver': ['liblinear', 'lbfgs', 'sag'],
                     'C': [0.1, 1, 10],
                 },
-                "KNeighborsClassifier": {},
-                "SVC": {},
+                "KNeighborsClassifier": {
+                    'n_neighbors': [3,5,7],
+                    'weights': ['uniform', 'distance'],
+                },
+                "SVC": {
+                    'C': [0.1,1,10],
+                    'kernel': ['linear', 'poly', 'rbf'],
+                    'gamma': [0.1, 1, 10], 
+                },
                 "DecisionTreeClassifier": {
                     'criterion': ['gini', 'entropy'],
-                    'splitter': ['best', 'random'],
-                    'max_features': ['sqrt', 'log2'],
+                   # 'splitter': ['best', 'random'],
+                    #'max_features': ['sqrt', 'log2'],
                 },
                 "AdaBoostClassifier": {
                     'learning_rate': [0.1, 0.01, 0.5, 0.001],
                     'n_estimators': [8, 16, 32, 64, 128, 256]
                 },
                 "GradientBoostingClassifier": {
-                    'loss': ['deviance', 'exponential'],
+                    #'loss': ['deviance', 'exponential'],
                     'learning_rate': [0.1, 0.01, 0.05, 0.001],
                     'subsample': [0.6, 0.7, 0.75, 0.8, 0.85, 0.9],
-                    'max_features': ['auto', 'sqrt', 'log2'],
+                    #'max_features': ['auto', 'sqrt', 'log2'],
                     'n_estimators': [8, 16, 32, 64, 128, 256]
                 },
                 "RandomForestClassifier": {
-                    'criterion': ['gini', 'entropy'],
-                    'max_features': ['sqrt', 'log2', None],
-                    'n_estimators': [8, 16, 32, 64, 128, 256]
-                },
-                "GradientBoostingClassifier": {
-                    'loss': ['deviance', 'exponential'],
-                    'learning_rate': [0.1, 0.01, 0.05, 0.001],
-                    'subsample': [0.6, 0.7, 0.75, 0.8, 0.85, 0.9],
-                    'max_features': ['auto', 'sqrt', 'log2'],
+                   # 'criterion': ['gini', 'entropy'],
+                   # 'max_features': ['sqrt', 'log2', None],
                     'n_estimators': [8, 16, 32, 64, 128, 256]
                 },
                 "XGBClassifier": {
